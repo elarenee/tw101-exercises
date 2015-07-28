@@ -12,6 +12,18 @@ public class Library {
     }
 
     public String printBooksContaining(String partialBookTitle) {
-        return null;
+        String matches = findBooksContaining(partialBookTitle);
+        printStream.println(matches);
+        return matches;
+    }
+
+    public String findBooksContaining(String partialBookTitle) {
+        String matches = new String();
+        for (String title: books) {
+            if(title.contains(partialBookTitle)) {
+                matches += (title + ", ");
+            }
+        }
+        return matches;
     }
 }
