@@ -9,7 +9,10 @@ public class Main {
         OddSum oddSum = new OddSum();
 
         Integer sum = oddSum.of(1, 100);
-
+        //Integer sum = oddSum.of(2, 4); // returns 3
+        //Integer sum = oddSum.of(2, 3); // returns 0
+        //Integer sum = oddSum.of(3, 4); // returns 3 (should return 0, though, right?)
+        
         System.out.println(sum);
     }
 }
