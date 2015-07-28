@@ -15,6 +15,7 @@ public class OddSum {
         return sum;
     }
 
+    // should this method be part of this class? is it too general?
     public static boolean isOdd(int n) {
         if(n % 2 != 0)
             return true;

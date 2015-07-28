@@ -14,9 +14,13 @@ public class Main {
                 new Rectangle(6, 7)
         };
 
+        //Rectangle[] rectangles2 = {};
+
         float average = new RectangleAverager().averageArea(rectangles);
+        //float average2 = new RectangleAverager().averageArea(rectangles2);
 
         System.out.println(average);
+        //System.out.println(average2);
     }
 
 }
