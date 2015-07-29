@@ -8,5 +8,17 @@ public class Main {
 
     public static void main(String[] args) {
 
+        int randomNumber = (int) (Math.random() * 101);
+        int userGuess = IO.getUserInput("Choose a number from 1-100. ");
+        while(userGuess != randomNumber) {
+
+            if(userGuess < randomNumber)
+                IO.tellUserTheyGuessedTooLow();
+            else
+                IO.tellUserTheyGuessedTooHigh();
+
+            userGuess = IO.getUserInput("Choose a number from 1-100. ");
+        }
+        IO.tellUserTheyWon();
     }
 }
