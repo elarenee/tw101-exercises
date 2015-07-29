@@ -1,26 +1,28 @@
 package com.thoughtworks.tw101.exercises.exercise7;
 import java.io.*;
+import java.text.ParseException;
 import java.util.*;
+import java.util.Scanner;
 
 /**
  * Created by lauren on 7/29/15.
  */
 public class IO {
 
-    // method from Chapter 5 of Head First Java :
-    // doesn't check for invalid non-integer input
     public static int getUserInput(String prompt) {
-        String inputLine = null;
-        System.out.print(prompt + "  ");
+        String userInput = new String();
+        System.out.print(prompt + " ");
+        Scanner cmdLineInput = new Scanner(System.in);
+        userInput = cmdLineInput.next();
+        int userGuess = 0;
         try {
-            BufferedReader is = new BufferedReader(new InputStreamReader(System.in));
-            inputLine = is.readLine();
-            if (inputLine.length() == 0 )
-                getUserInput(prompt);
-        } catch (IOException e) {
-            System.out.println("IOException: " + e);
+            userGuess = Integer.parseInt(userInput);
         }
-        return Integer.parseInt(inputLine.toLowerCase());
+        catch (NumberFormatException e) {
+            System.out.println("Error: Please enter an integer value.");
+            getUserInput(prompt);
+        }
+        return userGuess;
     }
 
     public static void tellUserTheyGuessedTooLow() {
