@@ -6,6 +6,19 @@ package com.thoughtworks.tw101.exercises.exercise8;
 
 public class Main {
     public static void main(String[] args) {
+        GameRound round = new GameRound();
+        int randomNumber = (int) (Math.random() * 101);
+        int userGuess = IO.getUserInput("Choose a number from 1-100. ");
+        while(userGuess != randomNumber) {
+            if(userGuess < randomNumber)
+                IO.tellUserTheyGuessedTooLow();
+            else
+                IO.tellUserTheyGuessedTooHigh();
 
+            userGuess = IO.getUserInput("Choose a number from 1-100. ");
+            round.updateGuesses(userGuess);
+        }
+        IO.tellUserTheyWon();
+        round.printPreviousGuesses();
     }
 }
