@@ -3,9 +3,13 @@ package com.thoughtworks.tw101.introductory_programming_exercises;
 public class TriangleExercises {
     public static void main(String[] args) {
         drawAnAsterisk();
+        System.out.println();
         drawAHorizontalLine(8);
+        System.out.println();
         drawAVerticalLine(3);
+        System.out.println();
         drawARightTriangle(3);
+        System.out.println();
     }
 
 //    Easiest exercise ever
@@ -23,6 +27,7 @@ public class TriangleExercises {
             System.out.print("*");
             n--;
         }
+        System.out.println();
     }
 
 //    Draw a vertical line
@@ -32,7 +37,10 @@ public class TriangleExercises {
 //            *
 //            *
     private static void drawAVerticalLine(int n) {
-
+        while (n > 0) {
+            System.out.println("*");
+            n--;
+        }
     }
 
 //    Draw a right triangle
@@ -42,6 +50,14 @@ public class TriangleExercises {
 //            **
 //            ***
     private static void drawARightTriangle(int n) {
-
+        int width = 1;
+        while (n > 0) {
+            for(int i = 0; i < width; i++) {
+                System.out.print("*");
+            }
+            System.out.println();
+            width++;
+            n--;
+        }
     }
 }
