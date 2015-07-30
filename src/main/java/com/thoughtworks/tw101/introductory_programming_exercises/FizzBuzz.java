@@ -32,6 +32,16 @@ public class FizzBuzz {
     }
 
     private static void fizzBuzz() {
-
+        int count = 1;
+        while (count <= 100) {
+            if(count%3 == 0)
+                System.out.print("Fizz");
+            if(count%5 == 0)
+                System.out.print("Buzz");
+            if(count%3 != 0 && count%5 != 0)
+                System.out.print(count);
+            System.out.println();
+            count++;
+        }
     }
 }
